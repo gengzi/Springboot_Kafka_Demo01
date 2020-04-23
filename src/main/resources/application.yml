@@ -1,0 +1,29 @@
+server:
+  port: 9090
+
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      # 配置消费者消息offset是否自动重置(消费者重连会能够接收最开始的消息)
+      auto-offset-reset: earliest
+    producer:
+      bootstrap-servers: localhost:9092
+      # 发送的对象信息变为json格式
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#kafka:
+#  topic:
+#    my-topic: my-topic
+#    my-topic2: my-topic2
+## demo2     使用注入的形式，创建 topic 不够灵活， 还要编写新的代码， 通过配置的方式，来在项目初始化的时候 创建 topic
+kafka:
+  topics:
+    - name: topic1
+      num-partitions: 3
+      replication-factor: 1
+    - name: topic2
+      num-partitions: 1
+      replication-factor: 1
+#    - name: topic3
+#      num-partitions: 2
+#      replication-factor: 1
