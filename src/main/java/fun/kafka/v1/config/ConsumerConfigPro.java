@@ -30,14 +30,14 @@ public class ConsumerConfigPro {
 
         // 其他配置
         // 指定 coordinator 协调人 检测消费者组成员失败的时间，默认10 秒 。 检测consumer 组成员崩溃，会将该成员踢出
-        properties.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG,5000);
+        properties.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG,10000);
         // 最大逻辑处理时间，假如 消费者接受到消息，需要将消息进行清理，入库，需要一分钟。 就可以设置这个最大逻辑处理时间。
         properties.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG,60*1000);
         // 无位移信息或者位移越界的策略，只是针对 consumer 消费的消息，不在当前消息日志的合理范围上，才会触发
         // erlist 从最早的消息，开始消费
         // latest 从最新处开始消费
         // none 抛异常
-        properties.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"erlist");
+        properties.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest");
         // 是否自动提交位移信息，设置true comsumer 会在后台自动提交位移，设置false ，需要用户手动提交位移信息。 对于需要精确一次处理的，可以设置为 false
         properties.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, true);
         // consumer 单次接受数据的最大字节数  默认 50 * 1024 * 1024
