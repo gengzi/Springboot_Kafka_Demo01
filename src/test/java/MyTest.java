@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
+
 
 public class MyTest {
 
@@ -51,6 +53,15 @@ public class MyTest {
 
         // 线程创建
         new Thread(() -> System.out.println("hello world")).start();
+    }
+
+
+    @Test
+    public void fun03(){
+
+        CountDownLatch countDownLatch = new CountDownLatch(2);
+
+
     }
 
 

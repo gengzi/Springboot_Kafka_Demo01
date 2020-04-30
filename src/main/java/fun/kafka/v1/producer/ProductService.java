@@ -14,7 +14,7 @@ public class ProductService {
 
     public void sendMessage(String topic, Object o) {
         Producer<String, String> producer = ProducerConfigPro.createProducer();
-        ProducerRecord producerRecord = new ProducerRecord<String, String>(topic, o);
+        ProducerRecord producerRecord = new ProducerRecord<String, String>(topic, (String)o);
         // 发送消息
         producer.send(producerRecord, new Callback() {
             @Override

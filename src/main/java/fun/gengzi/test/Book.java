@@ -1,7 +1,11 @@
 package fun.gengzi.test;
 
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
+
+    private static final long serialVersionUID = 858926722692306775L;
     private Long id;
     private String name;
 
