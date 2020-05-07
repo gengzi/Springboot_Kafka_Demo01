@@ -17,7 +17,7 @@ public class MsgExec {
         ConsumerService consumerService = new ConsumerService();
         consumerService.consumerMsg();
     }
-
+    //测试
 
     public static void main(String[] args) {
         MsgExec msgExec = new MsgExec();
