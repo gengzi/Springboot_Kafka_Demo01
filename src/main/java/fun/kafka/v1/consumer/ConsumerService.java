@@ -23,7 +23,7 @@ public class ConsumerService {
         // 根据配置项，创建消费者
         KafkaConsumer kafkaConsumer = new KafkaConsumer<String,String>(consumerConfig);
         // 订阅topic
-        kafkaConsumer.subscribe(Arrays.asList("v1-topic1","v2-topic2"));
+        kafkaConsumer.subscribe(Arrays.asList("v1-topic3","v2-topic2"));
         // 使用正则匹配所有的 topic  ConsumerRebalanceListener 用于 rebalance 用于平衡算法  NoOpConsumerRebalanceListener 表示什么都不做
         // kafkaConsumer.subscribe(Pattern.compile("kafka.*"),new NoOpConsumerRebalanceListener());
         // 消费数据

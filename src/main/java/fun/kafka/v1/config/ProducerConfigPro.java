@@ -44,6 +44,7 @@ public class ProducerConfigPro {
         // 配置发送方，能发送消息的大小
         properties.put(ProducerConfig.MAX_BLOCK_MS_CONFIG,10485760);
 
+//        properties.put(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG,true);
         // 配置自定义的分区机制
         //properties.put(ProducerConfig.PARTITIONER_CLASS_CONFIG,"fun.gengzi.productor.MyPartition");
 

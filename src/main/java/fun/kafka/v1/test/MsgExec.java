@@ -10,7 +10,10 @@ public class MsgExec {
 
     public void sendMsg() {
         ProductService productService = new ProductService();
-        productService.sendMessage("v1-topic1", "hello");
+        for (int i = 0; i < 100000; i++) {
+            productService.sendMessage("v1-topic3", "hello" + i);
+        }
+
     }
 
     public void consumMsg() {
@@ -22,7 +25,7 @@ public class MsgExec {
     public static void main(String[] args) {
         MsgExec msgExec = new MsgExec();
         msgExec.sendMsg();
-        msgExec.consumMsg();
+//        msgExec.consumMsg();
     }
 
 
